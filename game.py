@@ -23,6 +23,7 @@ print("AI chose: " + computer)
 if (computer == player):
 	print("tie")
 
+# always check for negative conditions first (the losing case)
 elif (computer == "rock"):
 	if (player == "scissors"):
 		print("you lose!")
@@ -34,3 +35,11 @@ elif (computer == "paper"):
 		print("you lose!")
 	else:
 		print("you win!")
+
+elif (computer == "scissors"):
+	if (player == "rock"):
+		print("you lose!")
+	else:
+		print("you win!")
+
+
