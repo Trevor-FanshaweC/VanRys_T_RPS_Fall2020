@@ -9,12 +9,44 @@ from random import randint
 # the index always starts at 0
 choices = ["rock", "paper", "scissors"]
 
-player_lives = 5
-computer_lives = 5
+player_lives = 1
+computer_lives = 1
 
-total_lives = 5
+total_lives = 1
 
 player = False; # True and False are Booleans - data types that can be truthy or falsy
+
+# define a win / lose function and refer to it (invoke it) in our game loop
+def winorlose(status):
+	#print("called winorlose", status)
+
+	if status == "won":
+		pre_message = "You are the yuuuuuuugest winner ever! "
+	else:
+		pre_message = "You done trumped it, loser! "
+
+	print(pre_message + "Would you like to play again?")
+	
+	choice = input("Y / N? ")
+
+	if choice == "Y" or choice == "y":
+
+		global player_lives
+		global computer_lives
+		global player
+		# reset the game and start over again
+		player_lives = 1
+		computer_lives = 1
+		player = False
+
+	elif choice == "N" or choice == "n":
+		# exit message and quit
+		print("You chose to quit. Better luck next time!")
+		exit()
+	else:
+		print("Make a valid choice - Y or N")
+		# this is generating a bug -> need to fix this check
+		choice = input("Y / N")
 
 # set up our game loop
 while player is False:
@@ -74,42 +106,46 @@ while player is False:
 
 	# check player lives and AI lives
 	if player_lives is 0:
-		print("You lost! Loser. Would you like to play again?")
-		choice = input("Y / N? ")
+		winorlose("lost")
 
-		if choice == "Y" or choice == "y":
-			# reset the game and start over again
-			player_lives = 2
-			computer_lives = 2
-			player = False
+		# print("You lost! Loser. Would you like to play again?")
+		# choice = input("Y / N? ")
 
-		elif choice == "N" or choice == "n":
-			# exit message and quit
-			print("You chose to quit. Better luck next time!")
-			exit()
-		else:
-			print("Make a valid choice - Y or N")
-			# this is generating a bug -> need to fix this check
-			choice = input("Y / N")
+		# if choice == "Y" or choice == "y":
+		# 	# reset the game and start over again
+		# 	player_lives = 2
+		# 	computer_lives = 2
+		# 	player = False
+
+		# elif choice == "N" or choice == "n":
+		# 	# exit message and quit
+		# 	print("You chose to quit. Better luck next time!")
+		# 	exit()
+		# else:
+		# 	print("Make a valid choice - Y or N")
+		# 	# this is generating a bug -> need to fix this check
+		# 	choice = input("Y / N")
 
 	elif computer_lives is 0:
-		print("You won! Winner. Would you like to play again?")
-		choice = input("Y / N? ")
+		winorlose("won")
 
-		if choice == "Y" or choice == "y":
-			# reset the game and start over again
-			player_lives = 2
-			computer_lives = 2
-			player = False
+		# print("You won! Winner. Would you like to play again?")
+		# choice = input("Y / N? ")
 
-		elif choice == "N" or choice == "n":
-			# exit message and quit
-			print("You chose to quit. Better luck next time!")
-			exit()
-		else:
-			# this is generating a bug -> need to fix this check
-			print("Make a valid choice - Y or N")
-			choice = input("Y / N")
+		# if choice == "Y" or choice == "y":
+		# 	# reset the game and start over again
+		# 	player_lives = 2
+		# 	computer_lives = 2
+		# 	player = False
+
+		# elif choice == "N" or choice == "n":
+		# 	# exit message and quit
+		# 	print("You chose to quit. Better luck next time!")
+		# 	exit()
+		# else:
+		# 	# this is generating a bug -> need to fix this check
+		# 	print("Make a valid choice - Y or N")
+		# 	choice = input("Y / N")
 
 	else:
 		player = False
