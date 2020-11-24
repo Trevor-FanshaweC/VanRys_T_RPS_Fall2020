@@ -108,45 +108,8 @@ while player is False:
 	if player_lives is 0:
 		winorlose("lost")
 
-		# print("You lost! Loser. Would you like to play again?")
-		# choice = input("Y / N? ")
-
-		# if choice == "Y" or choice == "y":
-		# 	# reset the game and start over again
-		# 	player_lives = 2
-		# 	computer_lives = 2
-		# 	player = False
-
-		# elif choice == "N" or choice == "n":
-		# 	# exit message and quit
-		# 	print("You chose to quit. Better luck next time!")
-		# 	exit()
-		# else:
-		# 	print("Make a valid choice - Y or N")
-		# 	# this is generating a bug -> need to fix this check
-		# 	choice = input("Y / N")
-
 	elif computer_lives is 0:
 		winorlose("won")
 
-		# print("You won! Winner. Would you like to play again?")
-		# choice = input("Y / N? ")
-
-		# if choice == "Y" or choice == "y":
-		# 	# reset the game and start over again
-		# 	player_lives = 2
-		# 	computer_lives = 2
-		# 	player = False
-
-		# elif choice == "N" or choice == "n":
-		# 	# exit message and quit
-		# 	print("You chose to quit. Better luck next time!")
-		# 	exit()
-		# else:
-		# 	# this is generating a bug -> need to fix this check
-		# 	print("Make a valid choice - Y or N")
-		# 	choice = input("Y / N")
-
 	else:
 		player = False
-		# computer = choices[randint(0,2)]
