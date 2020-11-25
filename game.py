@@ -12,6 +12,8 @@ while gameVars.player is False:
 	print("Player Lives:", gameVars.player_lives, "/", gameVars.total_lives)
 	print("===================================")
 	print("Choose your weapon! or type quit to exit\n")
+
+	
 	gameVars.player = input("Choose rock, paper or scissors: \n")
 
 	# if the player chooses to quit, then don't do anything else
@@ -53,7 +55,7 @@ while gameVars.player is False:
 
 
 	elif (computer == "scissors"):
-		if (gameVars.player == "rock"):
+		if (gameVars.player == "paper"):
 			gameVars.player_lives -= 1
 			print("you lose! player lives: ", gameVars.player_lives)
 		else:
